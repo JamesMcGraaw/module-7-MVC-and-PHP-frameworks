@@ -15,7 +15,7 @@ class BooksController
     {
         $this->renderer = $phpRenderer;
     }
-    function __invoke(RequestInterface $request, ResponseInterface $response, $args): ResponseInterface
+    function __invoke(RequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
 //        $response->getBody()->write('hello from BooksController');
 //        return $response;

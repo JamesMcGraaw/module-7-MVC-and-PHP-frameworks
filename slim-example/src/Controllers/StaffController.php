@@ -15,7 +15,7 @@ class StaffController
         $this->renderer = $phpRenderer;
     }
 
-    public function __invoke(RequestInterface $request, ResponseInterface $response, $args): ResponseInterface
+    public function __invoke(RequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
         $staffs = [
             ['name' => 'Phil', 'position' => 'CEO'],
