@@ -1,6 +1,0 @@
-.idea/
-.DS_Store
-/coverage/
-/vendor/
-/logs/*
-!/logs/README.md
