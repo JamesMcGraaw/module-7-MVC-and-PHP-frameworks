@@ -10,8 +10,8 @@
 
     <?php
     foreach ($staffs as $staff) {
-        echo '<p>Name: ' . $staff['name'] . '</p>';
-        echo '<p>Position: ' . $staff['position'] . '</p>';
+        echo '<p>Name: ' . $staff->getName() . '</p>';
+        echo '<p>Position: ' . $staff->getPosition() . '</p>';
     }
     ?>
 
