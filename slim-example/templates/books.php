@@ -9,7 +9,8 @@
 <ul>
     <?php
     foreach ($books as $book) {
-        echo '<li>' . $book['title'] . ' - ' . $book['author'] . '</li>';
+//        echo '<li>' . $book['title'] . ' - ' . $book['author'] . '</li>';
+        echo '<li>' . $book->getTitle() . ' - ' . $book->getAuthor() . '</li>';
     }
     ?>
 </ul>
