@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 
+use App\Controllers\BookIdController;
 use App\Controllers\BooksController;
 use App\Controllers\CoursesAPIController;
 use App\Controllers\myCallableClass;
@@ -44,6 +45,8 @@ return function (App $app) {
 
     //Examples
     $app->get('/books', BooksController::class);
+
+    $app->get('/books/{id}', BookIDController::class);
 
     $app->get('/staff', StaffController::class);
 
