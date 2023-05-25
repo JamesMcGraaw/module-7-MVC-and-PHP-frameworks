@@ -46,7 +46,7 @@ return function (App $app) {
     $app->get('/class', MyCallableClass::class);
 
     //Examples
-    $app->get('/books', BooksController::class);
+    $app->get('/books[/]', BooksController::class);
 
     $app->get('/books/{id}', BookIDController::class);
 

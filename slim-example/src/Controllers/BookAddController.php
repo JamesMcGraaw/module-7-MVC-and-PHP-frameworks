@@ -29,13 +29,15 @@ class BookAddController
         // use model to add data to database
         $newId = $this->booksModel->addBook($newBook);
         if ($newId) {
-            $forResponse .= $newId . ' saved successfully</p>';
+            $forResponse .= $newId . ' saved successfully';
         } else {
             $forResponse .= 'not saved';
         }
 
         $forResponse .= '</p>';
 
+
+//        return $response->withHeader('Location', './addbook');
         $response->getBody()->write($forResponse);
         return $response;
     }
