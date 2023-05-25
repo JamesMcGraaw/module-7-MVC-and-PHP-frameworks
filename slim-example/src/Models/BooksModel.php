@@ -44,4 +44,17 @@ class BooksModel
         $query->execute($params);
         return $query->fetch();
     }
+
+    public function addBook(array $newBook): int
+    {
+        $sql = 'INSERT INTO `books` (`title`, `author`)
+            VALUES (:title, :author);';
+        $query = $this->db->prepare($sql);
+        $params = [
+            'title' => $newBook['title'],
+            'author' => $newBook['author']
+        ];
+        $query->execute($params);
+        return $this->db->lastInsertId();
+    }
 }

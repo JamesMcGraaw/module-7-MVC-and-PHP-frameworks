@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+use App\Controllers\BookAddController;
+use App\Controllers\BookFormController;
 use App\Controllers\BookIdController;
 use App\Controllers\BooksController;
 use App\Controllers\CoursesAPIController;
@@ -49,6 +51,10 @@ return function (App $app) {
     $app->get('/books/{id}', BookIDController::class);
 
     $app->get('/staff', StaffController::class);
+
+    $app->get('/addbook', BookFormController::class);
+
+    $app->post('/books', BookAddController::class);
 
 };
 
