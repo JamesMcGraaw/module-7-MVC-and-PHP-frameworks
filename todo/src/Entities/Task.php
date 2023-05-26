@@ -15,12 +15,16 @@ class Task
      * @param string $task
      * @param int $completed
      */
-    public function __construct(int $id, string $task, int $completed)
-    {
-        $this->id = $id;
-        $this->task = $task;
-        $this->completed = $completed;
-    }
+
+// Did we ever find a way to make the constructor work?
+
+
+//    public function __construct(int $id, string $task, int $completed)
+//    {
+//        $this->id = $id;
+//        $this->task = $task;
+//        $this->completed = $completed;
+//    }
 
 
     /**

@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+use App\Controllers\AddTaskController;
+use App\Controllers\MarkAsCompleteController;
 use App\Controllers\TasksController;
 use Slim\App;
 use Slim\Views\PhpRenderer;
@@ -15,5 +17,9 @@ return function (App $app) {
     });
 
     $app->get('/tasks',TasksController::class);
+
+    $app->post('/addtask', AddTaskController::class);
+
+    $app->post('/markascomplete/{taskNumber}', MarkAsCompleteController::class);
 
 };
