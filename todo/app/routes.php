@@ -2,6 +2,8 @@
 declare(strict_types=1);
 
 use App\Controllers\AddTaskController;
+use App\Controllers\CompletedTaskController;
+use App\Controllers\DeleteTaskController;
 use App\Controllers\MarkAsCompleteController;
 use App\Controllers\TasksController;
 use Slim\App;
@@ -21,5 +23,9 @@ return function (App $app) {
     $app->post('/addtask', AddTaskController::class);
 
     $app->post('/markascomplete/{taskNumber}', MarkAsCompleteController::class);
+
+    $app->get('/completedtasks', CompletedTaskController::class);
+
+    $app->post('/deletetask/{taskNumber}', DeleteTaskController::class);
 
 };

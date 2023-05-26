@@ -49,4 +49,25 @@ class TasksModel
         $query = $this->db->prepare($sql);
         $query->execute($params);
     }
+
+    public function getCompletedTasks()
+    {
+        $sql = 'SELECT `id`, `task`, `completed`
+            FROM `tasks`
+            WHERE `completed` = 1;';
+        $query = $this->db->prepare($sql);
+        $query->setFetchMode(PDO::FETCH_CLASS, Task::class);
+        $query->execute();
+        return $query->fetchAll();
+    }
+
+    public function deleteTask(int $id): void
+    {
+        $sql = 'DELETE FROM `tasks`
+                WHERE `id` = :id;';
+
+        $params = ['id' => $id];
+        $query = $this->db->prepare($sql);
+        $query->execute($params);
+    }
 }

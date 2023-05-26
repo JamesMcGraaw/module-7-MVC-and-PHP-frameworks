@@ -18,11 +18,9 @@
 
         $thisTask = $task->getTask();
 
-        $completed = $task->getCompleted() ? 'Completed' : 'Incomplete';
+        echo '<li>' . $thisTask .
 
-        echo '<li>' . $thisTask . ' - ' . $completed . '
-
-        <form action="/markascomplete/'. $task->getId() . '" method="POST">
+        '<form action="/markascomplete/'. $task->getId() . '" method="POST">
             <button type="submit">Mark as Complete</button>
         </form>
         </li>';
@@ -30,5 +28,7 @@
     }
     ?>
 </ul>
+
+<a href="/completedtasks">See completed tasks</a>
 </body>
 </html>
