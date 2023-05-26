@@ -22,6 +22,12 @@ class MarkAsCompleteController
                              ResponseInterface $response,
                              array             $args): ResponseInterface
     {
-        $this->tasksModel->markAsComplete($args[0]);
+        $argsAsInt = $args['taskNumber'];
+        $this->tasksModel->markAsComplete($argsAsInt);
+
+        $forResponse = '</p><a href="/tasks">Go back to task list</a>';
+
+        $response->getBody()->write($forResponse);
+        return $response;
     }
 }

@@ -39,13 +39,14 @@ class TasksModel
         return $this->db->lastInsertId();
     }
 
-    public function markAsComplete(int $id): int
+    public function markAsComplete(int $id): void
     {
         $sql = 'UPDATE `tasks`
-                SET `completed` = 1;';
+                SET `completed` = 1
+                WHERE `id` = :id;';
 
+        $params = ['id' => $id];
         $query = $this->db->prepare($sql);
-        $query->execute();
-        return $query;
+        $query->execute($params);
     }
 }
