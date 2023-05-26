@@ -19,7 +19,7 @@ return function (ContainerBuilder $containerBuilder) {
             ],
             'db' => [
                 'host' => 'mysql:host=db;',
-                'name' => 'dbname=tasks',
+                'name' => 'dbname=todo',
                 'user' => 'root',
                 'password' => 'password',
                 'debug' => true
